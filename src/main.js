@@ -1,10 +1,19 @@
 let config = require('./commands/pen');
-let retriveLocalFile = require('./helpers/retrive-local-file')
+let retriveLocalFile = require('./helpers/retrive-local-file');
+let Validator = require('./validator');
 
 class TurtleGraphic {
-	constructor(path) {
-		this.file = retriveLocalFile(path);
+	constructor(options) {
+		if(!Validator.options) return false;
+		
+		this.file = retriveLocalFile(options.path);
+		this.canvas = options.canvas;
 	}
 }
 
-let graphics = new TurtleGraphic('.draw');
+document.addEventListener("DOMContentLoaded", function(event) {
+	let graphics = new TurtleGraphic({
+		path: '.draw'
+		canvas: document.querySelectorAll('canvas')
+	});
+}
