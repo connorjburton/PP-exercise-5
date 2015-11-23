@@ -1,4 +1,7 @@
-let config = require('./commands/pen');
+let commands = {
+	'P' => require('./commands/pen')
+};
+
 let retriveLocalFile = require('./helpers/retrive-local-file');
 let Validator = require('./validator');
 
