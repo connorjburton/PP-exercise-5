@@ -1,0 +1,29 @@
+{
+  "name": "pp-exercise-5",
+  "version": "1.0.0",
+  "description": "Exercise 5 from The Pragmatic Programmer.",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "babel-core": "^6.2.1",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-loader": "^6.2.0",
+    "webpack": "^1.12.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connorjburton/PP-exercise-5.git"
+  },
+  "author": "Connor Burton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/connorjburton/PP-exercise-5/issues"
+  },
+  "homepage": "https://github.com/connorjburton/PP-exercise-5#readme"
+}

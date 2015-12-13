@@ -5,20 +5,16 @@ let retriveLocalFile = function retriveLocalFile(path, callback, thisArg) {
 
 	let request = new XMLHttpRequest();
 
-	request.addEventListener('error', function() {
-		console.error('retriveLocalFile failed.');
-	});
+	request.addEventListener('error', function() { console.error('retriveLocalFile failed.'); });
 
 	request.addEventListener('load', function() {
 		if(request.status === 404 || request.status === 500) {
 			console.error('retriveLocalFile couldn\'t find the requested file.');
 		} else {
-			console.log(thisArg);
-			if(thisArg) {
-				let callback = callback.bind(thisArg);
+			if(callback) {
+				var cb = (thisArg) ? callback.bind(thisArg) : callback;
+				cb(request.response);
 			}
-
-			boundCallback(request.response);
 		}
 	});
 
